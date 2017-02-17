@@ -1,4 +1,4 @@
 module.exports = {
-    text1: 'Hello, this is a first block.\n\nThis is second block.\n\nHere is a third block.',
-    text2: 'Hello, this is a splitted,\n\nfirst block.\n\nThis is a modified block.\n\nHere is a third block.'
+    text1: 'Shows how text was',
+    text2: 'Shows how text is'
 };

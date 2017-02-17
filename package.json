@@ -11,7 +11,7 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo 'ERROR: There are no tests for this package'; exit 1",
+    "test": "mocha */**.spec.js --compilers js:babel-core/register",
     "build": "rm -rf _site && mkdir _site && browserify -t [ babelify --presets [ react ] ] demo/main.js -o _site/bundle.js && cp ./node_modules/draft-js/dist/Draft.css demo/diff.css demo/index.html _site/",
     "deploy": "npm run build && gh-pages -d _site",
     "watch": "watch 'npm run build' lib/ demo/",
@@ -28,18 +28,24 @@
   },
   "homepage": "https://github.com/Soreine/draft-js-diff#readme",
   "dependencies": {
+    "chai": "^3.5.0",
     "diff-match-patch": "^1.0.0",
     "draft-js": "^0.7.0",
     "just-debounce": "^1.0.0",
     "react": "^15.0.0-rc || ^14.0.0"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.5.0",
+    "babel-register": "^6.23.0",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "draft-js": "^0.7.0",
     "gh-pages": "^0.11.0",
     "http-server": "^0.9.0",
+    "mocha": "^3.2.0",
     "parallelshell": "^2.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
