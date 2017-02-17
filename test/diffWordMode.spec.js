@@ -9,3 +9,9 @@ describe('diffWordMode', () => {
     expect(actual).to.deep.eq(expected);
   });
 });
+
+// TODO: deal with atomic blocks
+
+// TODO: deal with entities?
+
+// TODO: create rawContentState from the diffs
