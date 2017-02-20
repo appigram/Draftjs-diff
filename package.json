@@ -29,6 +29,7 @@
   "homepage": "https://github.com/Soreine/draft-js-diff#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "deep-diff": "^0.3.4",
     "diff-match-patch": "^1.0.0",
     "draft-js": "^0.7.0",
     "just-debounce": "^1.0.0",
