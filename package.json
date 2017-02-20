@@ -1,39 +1,26 @@
 {
-  "name": "draft-js-diff",
-  "version": "1.0.1",
+  "name": "draft-js-diff-content",
+  "version": "0.0.1",
   "description": "Make React text editors with live highlight of differences, using DraftJS",
-  "keywords": [
-    "react-component",
-    "diff",
-    "draft",
-    "draft-js"
-  ],
   "license": "MIT",
   "main": "./lib/index.js",
   "scripts": {
     "test": "mocha */**.spec.js --compilers js:babel-core/register",
-    "build": "rm -rf _site && mkdir _site && browserify -t [ babelify --presets [ react ] ] demo/main.js -o _site/bundle.js && cp ./node_modules/draft-js/dist/Draft.css demo/diff.css demo/index.html _site/",
-    "deploy": "npm run build && gh-pages -d _site",
-    "watch": "watch 'npm run build' lib/ demo/",
-    "serve": "http-server -p 9090 _site/",
-    "start": "parallelshell 'npm run watch' 'npm run serve -s'"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Soreine/draft-js-diff.git"
+    "url": "git+https://github.com/conorcussell/draft-js-diff-content.git"
   },
   "author": "Nicolas Gaborit",
   "bugs": {
-    "url": "https://github.com/Soreine/draft-js-diff/issues"
+    "url": "https://github.com/conorcussell/draft-js-diff-content/issues"
   },
-  "homepage": "https://github.com/Soreine/draft-js-diff#readme",
+  "homepage": "https://github.com/conorcussell/draft-js-diff-content",
   "dependencies": {
     "chai": "^3.5.0",
     "deep-diff": "^0.3.4",
-    "diff-match-patch": "^1.0.0",
-    "draft-js": "^0.7.0",
-    "just-debounce": "^1.0.0",
-    "react": "^15.0.0-rc || ^14.0.0"
+    "diff-match-patch": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -41,22 +28,6 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.23.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
-    "draft-js": "^0.7.0",
-    "gh-pages": "^0.11.0",
-    "http-server": "^0.9.0",
-    "mocha": "^3.2.0",
-    "parallelshell": "^2.0.0",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
-    "reactify": "^1.0.0",
-    "watch": "^0.18.0",
-    "webpack": "^2.2.1"
-  },
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
+    "mocha": "^3.2.0"
   }
 }
