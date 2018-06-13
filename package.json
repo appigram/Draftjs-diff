@@ -1,33 +1,32 @@
 {
-  "name": "draft-js-diff-content",
+  "name": "Draftjs-diff",
   "version": "0.0.1",
   "description": "Make React text editors with live highlight of differences, using DraftJS",
   "license": "MIT",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha */**.spec.js --compilers js:babel-core/register",
+    "test": "mocha */**.spec.js --require @babel/register",
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conorcussell/draft-js-diff-content.git"
+    "url": "git+https://github.com/appigram/Draftjs-diff.git"
   },
-  "author": "Conor Cussell",
+  "author": "Eugene Sysmanov",
   "bugs": {
-    "url": "https://github.com/conorcussell/draft-js-diff-content/issues"
+    "url": "https://github.com/appigram/Draftjs-diff.git/issues"
   },
-  "homepage": "https://github.com/conorcussell/draft-js-diff-content",
+  "homepage": "https://github.com/appigram/Draftjs-diff.git",
   "dependencies": {
-    "chai": "^3.5.0",
-    "deep-diff": "^0.3.4",
-    "diff-match-patch": "^1.0.0"
+    "chai": "^4.1.2",
+    "deep-diff": "^1.0.1",
+    "diff-match-patch": "^1.0.1"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-register": "^6.23.0",
-    "mocha": "^3.2.0"
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/preset-react": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
+    "mocha": "^5.2.0"
   }
 }
