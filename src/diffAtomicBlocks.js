@@ -11,7 +11,7 @@ const diffBlock = (diff) => {
   }
 }
 
-export const diffAtomicBlocks = (prevContent, nextContent) => {
+const diffAtomicBlocks = (prevContent, nextContent) => {
   // we only need to diff the blocks and not worry about entity map
   const differences = diff(prevContent.blocks, nextContent.blocks)
 
@@ -23,3 +23,5 @@ export const diffAtomicBlocks = (prevContent, nextContent) => {
 
   return keyMap
 }
+
+export default diffAtomicBlocks

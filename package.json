@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Make React text editors with live highlight of differences, using DraftJS",
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "./src/index.js",
   "scripts": {
+    "start": "webpack-dev-server -d --config ./webpack.config.js --mode development",
     "test": "mocha */**.spec.js --require @babel/register",
     "build": "webpack"
   },
@@ -21,14 +22,22 @@
     "chai": "^4.1.2",
     "deep-diff": "^1.0.1",
     "diff-match-patch": "^1.0.1",
-    "webpack": "^4.12.0"
+    "draft-js": "^0.10.5",
+    "just-debounce": "^1.0.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
     "@babel/register": "^7.0.0-beta.51",
+    "babel-loader": "^8.0.0-beta.3",
     "mocha": "^5.2.0",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   }
 }

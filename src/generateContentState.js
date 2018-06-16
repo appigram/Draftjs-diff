@@ -1,4 +1,4 @@
-import { diffAtomicBlocks } from './diffAtomicBlocks'
+import diffAtomicBlocks from './diffAtomicBlocks'
 
 const generateContentState = (prevContent, nextContent) => {
   let newContentState

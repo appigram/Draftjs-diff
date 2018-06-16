@@ -1,51 +1,42 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-var DiffEditor = require('../').DiffEditor;
-var data = require('../test/data');
+import DraftDiff from '../src/index'
+import data from '../test/data'
 
-// ---- main
-
-
-var before = {
-    initial: data.text1
-};
-var after = {
-    initial: data.text2
-};
-
-var Test = React.createClass({
-    getInitialState: function () {
-        return {
-            beforeState: undefined,
-            afterState: undefined
-        }
-    },
-
-    onChange: function (afterState) {
-        this.setState({
-            afterState: afterState
-        });
-    },
-
-    render: function () {
-        var before = {
-            initial: data.text1,
-            state: this.state.beforeState
-        };
-        var after = {
-            initial: data.text2,
-            state: this.state.afterState,
-            onChange: this.onChange
-        };
-        return <DiffEditor before={before}
-                           after={after}
-                           debounceWait={-1}>
-        </DiffEditor>;
+class Test extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      beforeState: undefined,
+      afterState: undefined
     }
-});
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange (afterState) {
+    this.setState({
+      afterState: afterState
+    })
+  }
+
+  render () {
+    const before = {
+      initial: data.text1,
+      state: this.state.beforeState
+    }
+    const after = {
+      initial: data.text2,
+      state: this.state.afterState,
+      onChange: this.onChange
+    }
+    return <DraftDiff.DiffEditor before={before}
+      after={after}
+      debounceWait={-1} />
+  }
+}
 
 ReactDOM.render(
-    <Test></Test>,
-    document.getElementById('content')
-);
+  <Test />,
+  document.getElementById('content')
+)

@@ -118,9 +118,9 @@ const findRangesBetween = (ranges, start, end) => {
  * ranges provided for each block. Once the block's content change, the
  * block will not be decorated anymore.
  */
-const strategyFromMapping = (mappedRanges, blockMap) => {
+const strategyFromMapping = (mappedRanges, blockMap) =>
   // Save the original blockMap's content for later comparison
-  return function (contentBlock, callback) {
+  (contentBlock, callback) => {
     const key = contentBlock.getKey()
     const ranges = mappedRanges.get(key)
     if (!ranges) {
@@ -135,6 +135,5 @@ const strategyFromMapping = (mappedRanges, blockMap) => {
       })
     }
   }
-}
 
 export default diffDecoratorStrategies

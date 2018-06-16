@@ -70,13 +70,13 @@ const _DiffGroupsToChars_ = (text1, text2, delimiter) => {
     let lineStart = 0
     let lineEnd = -1
     // Keeping our own length variable is faster than looking it up in JS
-    var groupArrayLength = groupArray.length
+    let groupArrayLength = groupArray.length
     while (lineEnd < text.length - 1) {
       lineEnd = regexIndexOf(text, delimiter, lineStart)
       if (lineEnd === -1) {
         lineEnd = text.length - 1
       }
-      var line = text.substring(lineStart, lineEnd + 1)
+      const line = text.substring(lineStart, lineEnd + 1)
       lineStart = lineEnd + 1
 
       if (lineHash.hasOwnProperty ? lineHash.hasOwnProperty(line) :
@@ -100,7 +100,7 @@ const _DiffGroupsToChars_ = (text1, text2, delimiter) => {
  * Same as String.indexOf, but uses RegExp
  */
 const regexIndexOf = (str, regex, startpos) => {
-  var indexOf = str.substring(startpos || 0).search(regex)
+  const indexOf = str.substring(startpos || 0).search(regex)
   return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf
 }
 

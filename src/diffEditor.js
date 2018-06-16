@@ -38,7 +38,7 @@ class DiffEditor extends React.Component {
   constructor (props) {
     super(props)
     // Anti-patterns everywhere...
-    this.createInitialState(props)
+    this.state = this.createInitialState(props)
   }
 
   componentWillReceiveProps (props) {
@@ -47,7 +47,7 @@ class DiffEditor extends React.Component {
          || props.after.initial !== this.props.after.initial) {
       return this.setState(this.createInitialState(props))
     } else {
-      var newState = {
+      const newState = {
         beforeState: props.before.state || this.state.beforeState,
         afterState: props.after.state || this.state.afterState
       }
@@ -85,22 +85,22 @@ class DiffEditor extends React.Component {
   }
 
   onChange = (beforeState, afterState) => {
-        // Texts changed ?
-    var afterChanged = this.contentChanged(this.state.afterState, afterState)
-    var beforeChanged = this.contentChanged(this.state.beforeState, beforeState)
+    // Texts changed ?
+    const afterChanged = this.contentChanged(this.state.afterState, afterState)
+    const beforeChanged = this.contentChanged(this.state.beforeState, beforeState)
 
-    var newState = {
+    const newState = {
       beforeState: beforeState,
       afterState: afterState
     }
     if (beforeChanged || afterChanged) {
-            // Update diffs
+      // Update diffs
       if (this.props.debounceWait >= 0) {
-                // Update diff later
+        // Update diff later
         this.setState(newState)
         this.debouncedUpdateDiffs()
       } else {
-                // Update diff now
+        // Update diff now
         this.setState(this.diffDecorateEditors(newState))
       }
     } else {
@@ -109,7 +109,7 @@ class DiffEditor extends React.Component {
   }
 
   onAfterChange = (afterState) => {
-    var afterChanged = this.contentChanged(this.state.afterState, afterState)
+    const afterChanged = this.contentChanged(this.state.afterState, afterState)
     if (this.props.after.onChange && afterChanged) {
       this.props.after.onChange(afterState)
     } else {
@@ -118,7 +118,7 @@ class DiffEditor extends React.Component {
   }
 
   onBeforeChange = (beforeState) => {
-    var beforeChanged = this.contentChanged(this.state.beforeState, beforeState)
+    const beforeChanged = this.contentChanged(this.state.beforeState, beforeState)
     if (this.props.before.onChange && beforeChanged) {
       this.props.before.onChange(beforeState)
     } else {

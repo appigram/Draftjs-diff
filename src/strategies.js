@@ -13,7 +13,7 @@ class Strategies {
    * @param {DiffType} type
    * @returns {Draft.DecoratorStrategy} The strategy for the given type of diff
    */
-  set getStrategy (type) {
+  getStrategy = (type) => {
     switch (type) {
       case DIFF_TYPE.EQUAL :
         return this.equal
@@ -26,17 +26,11 @@ class Strategies {
     }
   }
 
-  get getEqualStrategy () {
-    return this.equal
-  }
+  getEqualStrategy = () => this.equal
 
-  get getDeleteStrategy () {
-    return this.del
-  }
+  getDeleteStrategy = () => this.del
 
-  get getInsertStrategy () {
-    return this.insert
-  }
+  getInsertStrategy = () => this.insert
 }
 
 export default Strategies
