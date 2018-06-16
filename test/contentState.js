@@ -1,14 +1,14 @@
-module.exports = {
-  "entityMap": {},
-  "blocks": [
+export default {
+  'entityMap': {},
+  'blocks': [
     {
-      "key":"8ai0j",
-      "text":"This is the content before image",
-      "type":"unstyled",
-      "depth":0,
-      "inlineStyleRanges":[],
-      "entityRanges":[],
-      "data": {}
+      'key': '8ai0j',
+      'text': 'This is the content before image',
+      'type': 'unstyled',
+      'depth': 0,
+      'inlineStyleRanges': [],
+      'entityRanges': [],
+      'data': {}
     }
   ]
 }
