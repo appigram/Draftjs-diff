@@ -41,11 +41,11 @@ You can use the base React component shown in the demo to simply display two sid
 ```js
 
 ReactDOM.render(
-    <DraftDiff.DiffEditor
+    <DiffEditor
       before={before}
       after={after}
     >
-    </DraftDiff.DiffEditor>,
+    </DiffEditor>,
     document.getElementById('target')
 );
 ```
@@ -73,7 +73,9 @@ You don't have to use the demo `DiffEditor`, you can just create decorators and 
 #### Computing the diffs
 
 ``` js
-const diffs = DraftDiff.diffWordMode(oldText, newText);
+import { diffWordMode } from 'draft-js-diff';
+
+const diffs = diffWordMode(oldText, newText);
 ```
 
 #### Creating strategies for the diffs
@@ -81,10 +83,12 @@ const diffs = DraftDiff.diffWordMode(oldText, newText);
 From an array of diff, you can create strategies for a [CompositeDecorator](https://facebook.github.io/draft-js/docs/advanced-topics-decorators.html#compositedecorator). Strategies are different for the editor containing the _old text_ and the editor with the _new text_. And they will only work if the editors contain the whole old or new text. So you need to generate strategies for both editors.
 
 ```js
+import { diffWordMode } from 'draft-js-diff';
+
 // Create strategies for the old text
-const oldTextStrategies = DraftDiff.diffDecoratorStrategies(diffs, false, blockMap1);
+const oldTextStrategies = diffDecoratorStrategies(diffs, false, blockMap1);
 // Create strategies for the editor containing the new text
-const newTextStrategies = DraftDiff.diffDecoratorStrategies(diffs, true, blockMap2);
+const newTextStrategies = diffDecoratorStrategies(diffs, true, blockMap2);
 
 // 3 functions that works as strategy to decorate spans of text that were...
 newTextStrategies.getEqualStrategy() // ... unchanged

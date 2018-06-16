@@ -1,5 +1,5 @@
 {
-  "name": "@appigram/draftjs-diff",
+  "name": "@ryfma/draftjs-diff",
   "version": "1.0.0",
   "description": "Make React text editors with live highlight of differences, using DraftJS (ES6 version)",
   "license": "MIT",
